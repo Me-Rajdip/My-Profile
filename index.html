@@ -2150,7 +2150,8 @@
       // Sound functions
       function playClickSound() {
         try {
-          const audio = new Audio('https://www.orangefreesounds.com/wp-content/uploads/2021/01/Sci-fi-beep-sound-effect.mp3');
+          const audio = new Audio('');
+          // const audio = new Audio('https://www.orangefreesounds.com/wp-content/uploads/2021/01/Sci-fi-beep-sound-effect.mp3');
           audio.volume = 0.3;
           audio.play().catch(e => console.log('Audio play failed:', e));
         } catch (e) {
@@ -2160,7 +2161,8 @@
       
       function playHoverSound() {
         try {
-          const audio = new Audio('https://assets.mixkit.co/active_storage/sfx/240/240-preview.mp3');
+          const audio = new Audio('');
+          // const audio = new Audio('https://assets.mixkit.co/active_storage/sfx/240/240-preview.mp3');
           audio.volume = 0.1;
           audio.play().catch(e => console.log('Audio play failed:', e));
         } catch (e) {
@@ -2609,5 +2611,6 @@
   </script>
 </body>
 </html>
+
 
 
