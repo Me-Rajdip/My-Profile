@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <!-- Improved viewport for mobile/tablet -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>Rajdip Bera | AI/ML Developer & Researcher</title>
 
@@ -75,15 +74,6 @@
       --shadow-lg: 0 30px 60px rgba(0, 0, 0, 0.12);
     }
 
-    @media (prefers-color-scheme: light) {
-      :root:not([data-theme]) {
-        --bg: #f0f2f5;
-        --card: #ffffff;
-        --text: #1f2937;
-        --muted: #6b7280;
-      }
-    }
-
     /* base reset */
     * {
       box-sizing: border-box;
@@ -107,12 +97,12 @@
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
       line-height: 1.6;
-      transition: background-color var(--transition), color var(--transition);
+      transition: background-color 0.3s ease, color 0.3s ease;
       position: relative;
       min-height: 100vh;
       overflow-x: hidden;
       width: 100%;
-      font-size: 16px; /* Base font size */
+      font-size: 16px;
     }
 
     /* Matrix rain background */
@@ -297,7 +287,7 @@
       background: var(--glass);
       border: 1px solid rgba(0, 255, 157, 0.1);
       box-shadow: var(--shadow-sm);
-      transition: all var(--transition);
+      transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
       height: var(--nav-height);
     }
 
@@ -317,6 +307,7 @@
       color: var(--primary);
       text-shadow: 0 0 10px var(--glow-1);
       letter-spacing: 1px;
+      transition: color 0.3s ease, text-shadow 0.3s ease;
     }
 
     .logo span {
@@ -347,7 +338,7 @@
       text-transform: uppercase;
       letter-spacing: 1px;
       font-size: 0.9rem;
-      transition: all var(--transition);
+      transition: color 0.3s ease;
     }
 
     .nav-links a::before {
@@ -358,7 +349,7 @@
       width: 0;
       height: 2px;
       background: linear-gradient(90deg, var(--primary), var(--accent));
-      transition: width var(--transition);
+      transition: width 0.3s ease;
     }
 
     .nav-links a:hover,
@@ -380,7 +371,7 @@
       border-radius: 50px;
       background: rgba(0, 255, 157, 0.1);
       border: 1px solid rgba(0, 255, 157, 0.2);
-      transition: all var(--transition);
+      transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.9rem;
       color: var(--primary);
@@ -451,6 +442,10 @@
       overflow-y: auto;
     }
 
+    [data-theme="light"] .mobile-menu {
+      background: rgba(255, 255, 255, 0.98);
+    }
+
     .mobile-menu.active {
       display: flex;
       opacity: 1;
@@ -508,7 +503,17 @@
       pointer-events: none;
     }
 
-    #home .section-bg { position:absolute; inset:0; z-index:0; background-image:url('https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80'); background-size:cover; background-position:center; opacity:0.05; filter: blur(2px) saturate(120%); transform: scale(1.02); }
+    #home .section-bg { 
+      position:absolute; 
+      inset:0; 
+      z-index:0; 
+      background-image:url('https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80'); 
+      background-size:cover; 
+      background-position:center; 
+      opacity:0.05; 
+      filter: blur(2px) saturate(120%); 
+      transform: scale(1.02); 
+    }
 
     #about .section-bg {
       background: 
@@ -547,11 +552,6 @@
     #contact .section-bg {
       background: 
         linear-gradient(135deg, rgba(0, 255, 157, 0.05) 0%, rgba(0, 184, 255, 0.05) 100%);
-    }
-
-    @keyframes pulseBackground {
-      0%, 100% { opacity: 0.5; }
-      50% { opacity: 1; }
     }
 
     @keyframes rotateBackground {
@@ -719,7 +719,7 @@
       padding: 1.5rem;
       border: 1px solid rgba(0, 255, 157, 0.1);
       box-shadow: var(--shadow-sm);
-      transition: all var(--transition);
+      transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
       position: relative;
       overflow: hidden;
       z-index: 2;
@@ -1166,7 +1166,6 @@
     }
 
     /* ================= Responsive ================= */
-    /* Tablet (768px - 992px) */
     @media (min-width: 768px) and (max-width: 992px) {
       body {
         font-size: 15px;
@@ -1254,7 +1253,6 @@
       }
     }
 
-    /* Mobile (max-width: 767px) */
     @media (max-width: 767px) {
       body {
         font-size: 14px;
@@ -1380,7 +1378,6 @@
       }
     }
 
-    /* Small Mobile (max-width: 480px) */
     @media (max-width: 480px) {
       body {
         font-size: 13px;
@@ -1442,14 +1439,12 @@
       }
     }
 
-    /* Large Desktop (min-width: 1200px) */
     @media (min-width: 1200px) {
       .container {
         padding: 0 2rem;
       }
     }
 
-    /* ================= Accessibility ================= */
     @media (prefers-reduced-motion: reduce) {
       * {
         animation-duration: 0.01ms !important;
@@ -1471,118 +1466,114 @@
       }
     }
 
-    /* Contact section responsive fixes */
-  @media (max-width: 768px) {
-    #contact .contact-container {
-      padding: 1.5rem !important;
+    @media (max-width: 768px) {
+      #contact .contact-container {
+        padding: 1.5rem !important;
+      }
+      
+      #contact .contact-form {
+        grid-template-columns: 1fr !important;
+        gap: 0.8rem !important;
+      }
+      
+      #contact .form-group {
+        grid-column: span 1 !important;
+      }
+      
+      #contact .contact-item {
+        flex-direction: column !important;
+        text-align: center !important;
+        gap: 0.3rem !important;
+      }
+      
+      #contact .contact-item i {
+        margin-bottom: 0.2rem;
+      }
+      
+      #contact .social-links {
+        gap: 0.6rem !important;
+      }
+      
+      #contact .social-link {
+        width: 40px !important;
+        height: 40px !important;
+        font-size: 0.9rem;
+      }
     }
     
-    #contact .contact-form {
-      grid-template-columns: 1fr !important;
-      gap: 0.8rem !important;
+    @media (max-width: 480px) {
+      #contact .contact-container {
+        padding: 1rem !important;
+      }
+      
+      #contact .contact-item {
+        font-size: 0.95rem !important;
+      }
+      
+      #contact .contact-item a {
+        word-break: break-all;
+      }
+      
+      #contact .social-links {
+        gap: 0.5rem !important;
+      }
+      
+      #contact .social-link {
+        width: 38px !important;
+        height: 38px !important;
+      }
     }
     
-    #contact .form-group {
-      grid-column: span 1 !important;
+    .form-control {
+      width: 100%;
+      padding: 0.8rem 1rem;
+      border: 1px solid rgba(0, 255, 157, 0.2);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.95rem;
+      transition: all 0.3s ease;
     }
     
-    #contact .contact-item {
-      flex-direction: column !important;
-      text-align: center !important;
-      gap: 0.3rem !important;
+    .form-control:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(0, 255, 157, 0.1);
     }
     
-    #contact .contact-item i {
-      margin-bottom: 0.2rem;
+    textarea.form-control {
+      min-height: 120px;
+      resize: vertical;
     }
     
-    #contact .social-links {
-      gap: 0.6rem !important;
+    .contact-item a {
+      color: var(--primary);
+      text-decoration: none;
+      transition: color 0.3s ease;
     }
     
-    #contact .social-link {
-      width: 40px !important;
-      height: 40px !important;
-      font-size: 0.9rem;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    #contact .contact-container {
-      padding: 1rem !important;
+    .contact-item a:hover {
+      color: var(--accent);
+      text-decoration: underline;
     }
     
-    #contact .contact-item {
-      font-size: 0.95rem !important;
+    .social-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: rgba(0, 255, 157, 0.1);
+      color: var(--primary);
+      transition: all 0.3s ease;
     }
     
-    #contact .contact-item a {
-      word-break: break-all;
+    .social-link:hover {
+      background: var(--primary);
+      color: #000;
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0, 255, 157, 0.3);
     }
-    
-    #contact .social-links {
-      gap: 0.5rem !important;
-    }
-    
-    #contact .social-link {
-      width: 38px !important;
-      height: 38px !important;
-    }
-  }
-  
-  /* Ensure form controls are responsive */
-  .form-control {
-    width: 100%;
-    padding: 0.8rem 1rem;
-    border: 1px solid rgba(0, 255, 157, 0.2);
-    border-radius: 8px;
-    background: rgba(255, 255, 255, 0.05);
-    color: var(--text);
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.95rem;
-    transition: all 0.3s ease;
-  }
-  
-  .form-control:focus {
-    outline: none;
-    border-color: var(--primary);
-    box-shadow: 0 0 0 3px rgba(0, 255, 157, 0.1);
-  }
-  
-  textarea.form-control {
-    min-height: 120px;
-    resize: vertical;
-  }
-  
-  /* Contact item alignment */
-  .contact-item a {
-    color: var(--primary);
-    text-decoration: none;
-    transition: color 0.3s ease;
-  }
-  
-  .contact-item a:hover {
-    color: var(--accent);
-    text-decoration: underline;
-  }
-  
-  /* Social links styling */
-  .social-link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    background: rgba(0, 255, 157, 0.1);
-    color: var(--primary);
-    transition: all 0.3s ease;
-  }
-  
-  .social-link:hover {
-    background: var(--primary);
-    color: #000;
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0, 255, 157, 0.3);
-  }
   </style>
 </head>
 <body>
@@ -1732,7 +1723,6 @@
             <h3>M.Sc. in Computer Science</h3>
             <p class="muted"><i class="fas fa-map-marker-alt"></i> Ramakrishna Mission Vidyamandira, Belur Math, Howrah</p>
             <p><strong>CGPA:</strong> 8.33/10.0</p>
-            <!-- <p><strong>Specialization:</strong> Artificial Intelligence & Machine Learning</p> -->
           </div>
         </div>
 
@@ -1743,7 +1733,6 @@
             <h3>B.Sc in Computer Science</h3>
             <p class="muted"><i class="fas fa-map-marker-alt"></i> Midnapore College (Autonomous), Paschim Medinipur</p>
             <p><strong>CGPA:</strong> 8.51/10.0</p>
-            <!-- <p><strong>Key Courses:</strong> Data Structures, Algorithms, DBMS, Machine Learning</p> -->
           </div>
         </div>
 
@@ -1790,14 +1779,7 @@
             <div style="padding:6px 10px;border-radius:999px;background:linear-gradient(90deg,var(--primary),var(--accent));color:white;font-weight:700;">CICBA 2025</div>
             <div style="padding:6px 10px;border-radius:999px;background:linear-gradient(90deg,var(--accent),var(--gold));color:white;font-weight:700;">4 – 6 July, 2025</div>
             </div>
-            <!-- <span class="tech-tag">Federated Learning</span>
-            <span class="tech-tag">Differential Privacy</span> -->
           </div>
-          
-          <!-- <div class="research-abstract">
-            <h4>Abstract</h4>
-            <p>This research proposes a novel framework combining vertical federated learning with differential privacy techniques to enhance healthcare data privacy while maintaining model utility. Our approach addresses the critical challenge of privacy-preserving collaborative learning in distributed healthcare systems.</p>
-          </div> -->
           
           <a href="https://doi.org/" class="muted" target="_blank" rel="noopener" style="display:inline-block;margin-top:10px;font-weight:700;">DOI: Will be updated soon (opens DOI.org)</a>
         </div>
@@ -2141,17 +2123,21 @@
     (function() {
       'use strict';
 
-      // Initialize theme
+      // Initialize theme based on system preference
       const themeToggle = document.getElementById('themeToggle');
       const themeText = document.getElementById('themeText');
       const root = document.documentElement;
       const THEME_KEY = 'rb_theme_v4';
       
+      // Check system preference
+      function getSystemTheme() {
+        return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+      }
+
       // Sound functions
       function playClickSound() {
         try {
           const audio = new Audio('');
-          // const audio = new Audio('https://www.orangefreesounds.com/wp-content/uploads/2021/01/Sci-fi-beep-sound-effect.mp3');
           audio.volume = 0.3;
           audio.play().catch(e => console.log('Audio play failed:', e));
         } catch (e) {
@@ -2162,7 +2148,6 @@
       function playHoverSound() {
         try {
           const audio = new Audio('');
-          // const audio = new Audio('https://assets.mixkit.co/active_storage/sfx/240/240-preview.mp3');
           audio.volume = 0.1;
           audio.play().catch(e => console.log('Audio play failed:', e));
         } catch (e) {
@@ -2181,10 +2166,26 @@
           themeToggle.querySelector('.icon').className = 'icon fas fa-sun';
         }
         localStorage.setItem(THEME_KEY, theme);
+        
+        // Force a repaint to ensure all styles are applied
+        document.body.style.display = 'none';
+        document.body.offsetHeight; // Trigger reflow
+        document.body.style.display = '';
       }
 
-      const savedTheme = localStorage.getItem(THEME_KEY) || 'dark';
-      setTheme(savedTheme);
+      // Get initial theme: saved preference or system preference
+      const savedTheme = localStorage.getItem(THEME_KEY);
+      const initialTheme = savedTheme || getSystemTheme();
+      setTheme(initialTheme);
+
+      // Listen for system theme changes
+      window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', (e) => {
+        // Only update if user hasn't set a manual preference
+        if (!localStorage.getItem(THEME_KEY)) {
+          const newTheme = e.matches ? 'light' : 'dark';
+          setTheme(newTheme);
+        }
+      });
 
       themeToggle.addEventListener('click', () => {
         const currentTheme = root.getAttribute('data-theme') ? 'light' : 'dark';
@@ -2192,7 +2193,7 @@
         playClickSound();
       });
 
-      // Mobile menu functionality - FIXED
+      // Mobile menu functionality
       const hamburger = document.getElementById('hamburger');
       const mobileMenu = document.getElementById('mobileMenu');
       const mobileLinks = document.querySelectorAll('.mobile-link');
@@ -2207,7 +2208,7 @@
 
       hamburger.addEventListener('click', toggleMobileMenu);
 
-      // Close mobile menu when clicking a link - FIXED
+      // Close mobile menu when clicking a link
       mobileLinks.forEach(link => {
         link.addEventListener('click', (e) => {
           e.preventDefault();
@@ -2217,7 +2218,6 @@
           mobileMenu.classList.remove('active');
           document.body.style.overflow = 'auto';
           
-          // Scroll to section with offset
           setTimeout(() => {
             const targetElement = document.querySelector(targetId);
             if (targetElement) {
@@ -2295,7 +2295,6 @@
           cursor.style.top = mouseY + 'px';
         });
 
-        // Cursor hover effect
         const hoverElements = document.querySelectorAll('a, button, .btn, .social-link, .project-card');
         hoverElements.forEach(el => {
           el.addEventListener('mouseenter', () => {
@@ -2318,7 +2317,6 @@
         const fontSize = 14;
         const columns = Math.floor(window.innerWidth / fontSize);
         
-        // Clear existing
         matrixBg.innerHTML = '';
         
         for (let i = 0; i < columns; i++) {
@@ -2332,7 +2330,6 @@
         }
       }
 
-      // Initialize matrix rain
       createMatrixRain();
       window.addEventListener('resize', createMatrixRain);
 
@@ -2397,12 +2394,10 @@
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
-            // Animate skill bars in skills section
             if (entry.target.id === 'skills') {
               animateSkillBars();
             }
             
-            // Add animation class to cards
             const cards = entry.target.querySelectorAll('.card');
             cards.forEach((card, index) => {
               setTimeout(() => {
@@ -2414,7 +2409,6 @@
         });
       }, observerOptions);
 
-      // Observe all sections
       document.querySelectorAll('section').forEach(section => {
         observer.observe(section);
       });
@@ -2435,14 +2429,11 @@
         contactForm.addEventListener('submit', (e) => {
           e.preventDefault();
           
-          // Get form values
           const name = contactForm.querySelector('input[type="text"]').value;
           const email = contactForm.querySelector('input[type="email"]').value;
           
-          // Show success message
           alert(`Thank you, ${name}! Your message has been sent. I'll get back to you soon at ${email} (This is only for Demo use).`);
           
-          // Reset form
           contactForm.reset();
           playClickSound();
         });
@@ -2451,7 +2442,6 @@
       // Initialize particles.js
       function initParticles() {
         if (typeof particlesJS !== 'undefined') {
-          // Only initialize for header to save performance
           particlesJS('particles-header', {
             particles: {
               number: { value: 60, density: { enable: true, value_area: 800 } },
@@ -2495,14 +2485,12 @@
         );
         
         interactiveElements.forEach(el => {
-          // Click sound
           el.addEventListener('click', function(e) {
             if (!el.classList.contains('mobile-link') && !el.classList.contains('nav-link')) {
               playClickSound();
             }
           });
           
-          // Hover sound for buttons
           if (el.classList.contains('btn') || el.classList.contains('social-link')) {
             el.addEventListener('mouseenter', function() {
               playHoverSound();
@@ -2514,12 +2502,20 @@
       // Navbar background on scroll
       window.addEventListener('scroll', () => {
         const nav = document.getElementById('mainNav');
-        if (window.scrollY > 50) {
-          nav.style.background = 'rgba(15, 17, 26, 0.95)';
-          nav.style.backdropFilter = 'blur(10px)';
-        } else {
-          nav.style.background = 'var(--glass)';
-          nav.style.backdropFilter = 'blur(10px)';
+        const isLightTheme = root.getAttribute('data-theme') === 'light';
+        
+        if (nav) {
+          if (window.scrollY > 50) {
+            nav.style.background = isLightTheme 
+              ? 'rgba(255, 255, 255, 0.95)' 
+              : 'rgba(15, 17, 26, 0.95)';
+            nav.style.backdropFilter = 'blur(10px)';
+          } else {
+            nav.style.background = isLightTheme 
+              ? 'rgba(255, 255, 255, 0.8)' 
+              : 'rgba(15, 17, 26, 0.7)';
+            nav.style.backdropFilter = 'blur(10px)';
+          }
         }
       });
 
@@ -2547,36 +2543,25 @@
 
       // Initialize everything when DOM is loaded
       document.addEventListener('DOMContentLoaded', function() {
-        // Add sound effects
         addSoundEffects();
-        
-        // Start typing animation
         setTimeout(typeText, 1000);
-        
-        // Initialize particles
         setTimeout(initParticles, 500);
-        
-        // Set active nav links
         setActiveNavLink();
         
-        // Initialize cards with initial styles
         document.querySelectorAll('.card').forEach(card => {
           card.style.opacity = '0';
           card.style.transform = 'translateY(20px)';
           card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
         });
         
-        // Initialize skill bars
         document.querySelectorAll('.skill-level').forEach(skill => {
           skill.style.width = '0%';
         });
         
-        // Fix for mobile/tablet viewport
         function setViewportHeight() {
           let vh = window.innerHeight * 0.01;
           document.documentElement.style.setProperty('--vh', `${vh}px`);
           
-          // Fix for mobile address bar
           const header = document.querySelector('header');
           if (header && window.innerWidth <= 767) {
             header.style.minHeight = window.innerHeight + 'px';
@@ -2587,7 +2572,6 @@
         window.addEventListener('resize', setViewportHeight);
         window.addEventListener('orientationchange', setViewportHeight);
         
-        // Fix for iOS Safari 100vh issue
         if (/iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream) {
           document.documentElement.style.height = '100%';
           document.body.style.height = '100%';
@@ -2601,7 +2585,6 @@
           fixVH();
         }
         
-        // Console greeting (for hacker theme)
         console.log('%c🚀 Welcome to Rajdip Bera\'s Portfolio', 'color: #00ff9d; font-size: 18px; font-weight: bold;');
         console.log('%c🔐 AI/ML Developer | Privacy-Preserving AI Specialist', 'color: #00b8ff; font-size: 14px;');
         console.log('%c💻 System initialized successfully...', 'color: #ff00aa; font-size: 12px;');
@@ -2611,8 +2594,3 @@
   </script>
 </body>
 </html>
-
-
-
-
-
